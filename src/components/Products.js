@@ -9,7 +9,7 @@ const ProductList = ({ products, children, allPrice }) => {
         {products.map((product) => (
           <li key={product.id}>
             <p>{product.name}</p>
-            <img width="150" src={product.img} alt="img" />
+            <img width="90" src={product.img} alt="img" />
             <p>{product.price} dollars</p>
           </li>
         ))}

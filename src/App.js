@@ -4,7 +4,7 @@ import TodoEditor from "./components/TodoEditor";
 
 class App extends Component {
   state = {
-    todos: "asd",
+    todos: "",
   };
   addTodo = (text) => {
     const todo = { text };
@@ -18,7 +18,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state);
+    
     return (
       <div>
         <Form onSubmit={this.formSubmitHandler} />

@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "name": "latte",
+    "name": "Latte",
     "price": 10,
-    "img": "https://www.flaticon.com/svg/static/icons/svg/763/763704.svg"
+    "img": "https://image.flaticon.com/icons/png/512/1046/1046785.png"
   },
   {
     "id":2,
-    "name": "espresso",
+    "name": "Expresso",
     "price": 20,
-    "img": "https://www.flaticon.com/svg/static/icons/svg/1623/1623681.svg"
+    "img": "https://image.flaticon.com/icons/png/512/2935/2935307.png"
   },
   {
     "id": 3,
-    "name": "americano",
+    "name": "Americano",
     "price": 15,
-    "img": "https://www.flaticon.com/svg/static/icons/svg/1998/1998749.svg"
+    "img": "https://image.flaticon.com/icons/png/512/2935/2935500.png"
   },
   {
     "id": 4,
-    "name": "cappucino",
+    "name": "Cappucino",
     "price": 5,
-    "img": "https://www.flaticon.com/svg/static/icons/svg/1998/1998249.svg"
+    "img": "https://image.flaticon.com/icons/png/512/2935/2935413.png"
   }
 ]

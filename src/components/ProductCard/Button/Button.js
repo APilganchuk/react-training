@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
       margin: theme.spacing(0.4),
-      display: "block",
+      display: "inline",
+      height: "29px",
     },
   },
 }));
@@ -16,7 +17,7 @@ export function ContainedButtons() {
   return (
     <div className={classes.root}>
       <Button size="small" variant="outlined" color="secondary">
-        Click
+        buy
       </Button>
     </div>
   );

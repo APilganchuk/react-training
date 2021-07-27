@@ -41,8 +41,7 @@ Products.defaultProps = {
 };
 
 Products.propTypes = {
-  children: PropTypes.array,
-  allPrice: PropTypes.number.isRequired,
+  allPrice: PropTypes.number,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,

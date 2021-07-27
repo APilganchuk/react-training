@@ -1,0 +1,16 @@
+.form input {
+  display: block;
+  margin-bottom: 15px;
+}
+.form button {
+  display: block;
+  margin-bottom: 15px;
+}
+.form b {
+  display: block;
+  margin-bottom: 15px;
+  color: tomato;
+}
+.form input[type="checkbox"] {
+  display: inline;
+}

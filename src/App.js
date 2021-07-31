@@ -1,44 +1,22 @@
 import { Component } from "react";
-import Form from "./components/Form/Form";
-import TodoEditor from "./components/TodoEditor";
-import Modal from "./components/Modal";
+
 class App extends Component {
   state = {
-    todos: "",
-    showModal: false,
+    pokemon: null,
+    loading: false,
   };
-  addTodo = (text) => {
-    const todo = { text };
-
-    this.setState(({ todos }) => ({ todos: [todo, ...todos] }));
-  };
-  formSubmitHandler = (data) => {
-    setTimeout(() => {
-      console.log(data);
-    }, 2000);
-  };
-
-  toggleModal = () => {
-    this.setState((prewState) => ({ showModal: !prewState.showModal }));
-  };
-
+  componentDidMount() {
+    this.setState({ loading: true });
+    fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+      .then((res) => res.json())
+      .then((pokemon) => this.setState({ pokemon }))
+      .finally(() => this.setState({ loading: false }));
+  }
   render() {
     return (
       <div>
-        <button onClick={this.toggleModal} type="button">
-          Open
-        </button>
-        {this.state.showModal && (
-          <Modal onClose={this.toggleModal}>
-            <p>hello</p>
-            <button onClick={this.toggleModal} type="button">
-              Close
-            </button>
-          </Modal>
-        )}
-
-        <Form onSubmit={this.formSubmitHandler} />
-        <TodoEditor onSubmit={this.addTodo} />
+        {this.state.loading && <b>Loading...</b>}
+        {this.state.pokemon && <div>pokemon</div>}
       </div>
     );
   }

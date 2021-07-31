@@ -1,22 +1,36 @@
 import { Component } from "react";
 
 class App extends Component {
-  state = {
-    pokemon: null,
-    loading: false,
-  };
-  componentDidMount() {
-    this.setState({ loading: true });
-    fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-      .then((res) => res.json())
-      .then((pokemon) => this.setState({ pokemon }))
-      .finally(() => this.setState({ loading: false }));
+  constructor() {
+    super();
+    console.log("constructor");
   }
+
+  state = {
+    value: 3,
+    time: 0,
+  };
+
+  componentDidMount() {
+    console.log("component did mount");
+    setInterval(() => {
+      this.setState((prevState) => ({ time: prevState.time + 1 }));
+    }, 5000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.time !== this.state.value) {
+      console.log("state update");
+      
+    }
+  }
+
   render() {
+    console.log("render");
     return (
       <div>
-        {this.state.loading && <b>Loading...</b>}
-        {this.state.pokemon && <div>pokemon</div>}
+        <h2>Value:{this.state.value}</h2>
+        <h2>Your time site:{this.state.time}</h2>
       </div>
     );
   }

@@ -1,46 +1,48 @@
-import { Component } from "react";
-import Form from "./components/Form/Form";
-import TodoEditor from "./components/TodoEditor";
+import { useState } from "react";
+import "./App.css";
+import Checkbox from "./components/Checkbox";
+
 import Modal from "./components/Modal";
-class App extends Component {
-  state = {
-    todos: "",
-    showModal: false,
-  };
-  addTodo = (text) => {
-    const todo = { text };
 
-    this.setState(({ todos }) => ({ todos: [todo, ...todos] }));
-  };
-  formSubmitHandler = (data) => {
-    setTimeout(() => {
-      console.log(data);
-    }, 2000);
+const App = () => {
+  const [modal, setmodal] = useState(false);
+  const [color, setColor] = useState("#fff");
+
+  const toggleModal = () => {
+    setmodal((prevState) => !prevState);
   };
 
-  toggleModal = () => {
-    this.setState((prewState) => ({ showModal: !prewState.showModal }));
+  const changeTheme = (staus) => {
+    if (staus) {
+      setColor("#fff");
+    } else {
+      setColor("#000");
+    }
   };
 
-  render() {
-    return (
-      <div>
-        <button onClick={this.toggleModal} type="button">
-          Open
-        </button>
-        {this.state.showModal && (
-          <Modal onClose={this.toggleModal}>
-            <p>hello</p>
-            <button onClick={this.toggleModal} type="button">
-              Close
-            </button>
-          </Modal>
-        )}
+  const fnA = (a) => a + 5;
+  const r = fnA(2);
 
-        <Form onSubmit={this.formSubmitHandler} />
-        <TodoEditor onSubmit={this.addTodo} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="Wrapper">
+      <button onClick={toggleModal} type="button">
+        Open
+      </button>
+
+      {modal && (
+        <Modal onClose={toggleModal} color={color}>
+          <Checkbox changeTheme={changeTheme} />
+          <hr />
+          <button
+            style={{ marginTop: "250px" }}
+            onClick={toggleModal}
+            type="button"
+          >
+            <b>CLOSE</b>
+          </button>
+        </Modal>
+      )}
+    </div>
+  );
+};
 export default App;

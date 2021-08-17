@@ -10,7 +10,7 @@ export default function Navigation() {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Main
+        Home
       </NavLink>
       <NavLink
         to="/1"

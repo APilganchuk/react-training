@@ -1,35 +1,16 @@
+import { NavLink } from "react-router-dom";
+import { Route } from "react-router";
+import Training from "../training/Training";
+import Training2 from "../training/Training2";
+
 export default function HomeView() {
   return (
-    <>
-      <h1>Welcome!!!</h1>
+    <div className="wrapper">
+      <NavLink to="/smolin">Redux_Smolin</NavLink>
+      <NavLink to="/repeta">Redux_Repeta</NavLink>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est nam
-        excepturi placeat eligendi voluptatibus a illo eos ipsam, necessitatibus
-        quo at quae pariatur et asperiores odit! Quasi sunt odit omnis at
-        deserunt placeat ipsa earum dignissimos magni voluptatum quisquam veniam
-        libero qui fugit accusantium cum ratione, facilis tempore in!
-        Voluptates, minus nesciunt sed optio voluptate et quae accusamus est
-        eos, dolorum quibusdam dolorem debitis perferendis voluptas rem quos
-        eius ab, commodi cumque dolor. Repellendus porro impedit, enim
-        temporibus quibusdam eum natus corporis id? Ducimus fugit consequatur
-        consequuntur.
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est nam
-        excepturi placeat eligendi voluptatibus a illo eos ipsam, necessitatibus
-        quo at quae pariatur et asperiores odit! Quasi sunt odit omnis at
-        deserunt placeat ipsa earum dignissimos magni voluptatum quisquam veniam
-        libero qui fugit accusantium cum ratione, facilis tempore in!
-        Voluptates, minus nesciunt sed optio voluptate et quae accusamus est
-        eos, dolorum quibusdam dolorem debitis perferendis voluptas rem quos
-        eius ab, commodi cumque dolor. Repellendus porro impedit, enim
-        temporibus quibusdam eum natus corporis id? Ducimus fugit consequatur
-        consequuntur.
-      </p>
-    </>
+      <Route path="/smolin" component={Training} />
+      <Route path="/repeta" component={Training2} />
+    </div>
   );
 }

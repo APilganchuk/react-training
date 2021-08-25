@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Route } from "react-router";
 import { useLocation } from "react-router";
-import Training from "../training/Training";
+import GoBack from "../training/GoBack";
 
 export default function HomeView() {
   const location = useLocation();
@@ -31,10 +31,10 @@ export default function HomeView() {
       </NavLink>
 
       <Route path="/smolin">
-        <Training title="one" />
+        <GoBack title="one" />
       </Route>
       <Route path="/repeta">
-        <Training title="two" />
+        <GoBack title="two" />
       </Route>
     </div>
   );

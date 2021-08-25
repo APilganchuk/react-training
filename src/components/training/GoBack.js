@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useHistory } from "react-router";
 
-export default function Training({ title }) {
+export default function GoBack({ title }) {
   const location = useLocation();
   const history = useHistory();
 

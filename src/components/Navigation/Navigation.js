@@ -17,14 +17,14 @@ export default function Navigation() {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        BasicsRedux
+        Redux
       </NavLink>
       <NavLink
-        to="/books"
+        to="/training"
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Books
+        Training
       </NavLink>
     </nav>
   );

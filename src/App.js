@@ -5,7 +5,7 @@ import AppBar from "./components/AppBar/AppBar";
 import Container from "./components/Container";
 import HomeView from "./components/views/HomeView";
 import BasicsRedux from "./components/views/BasicsRedux";
-import BooksView from "./components/views/BooksView";
+import BooksView from "./components/views/TrainingView";
 import NotFoundView from "./components/views/NotFoundView";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
       <AppBar />
       <Switch>
         <Route path="/1" component={BasicsRedux} />
-        <Route path="/books" component={BooksView} />
+        <Route path="/training" component={BooksView} />
         <Route path="/" component={HomeView} />
         <Route component={NotFoundView} />
       </Switch>

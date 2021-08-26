@@ -6,6 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import AuthProvider from "./context/AuthProvider";
+import { myAction } from "./redux/action";
+
+store.dispatch(myAction(2));
+store.dispatch(myAction(7));
 
 ReactDOM.render(
   <React.StrictMode>

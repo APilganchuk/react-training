@@ -1,36 +1,33 @@
 import React from "react";
-import { useState, useEffect } from "react";
+
 import Buttons from "./Buttons";
 import Value from "./Value";
+import { connect } from "react-redux";
+import { decrement } from "../../../redux/action";
+import { increment } from "../../../redux/action";
 
-export default function Counter() {
-  const [value, setValue] = useState(0);
-  const [increment, setIncrement] = useState(0);
-  const [decrement, setDecrement] = useState(0);
-  
-  useEffect(() => {
-    const totalClicks = increment + decrement;
-    document.title = totalClicks;
-  }, [decrement, increment]);
-
-  const onIncrement = () => {
-    setValue(value + 1);
-    setIncrement(increment + 1);
-  };
-  const onDecrement = () => {
-    setValue(value - 1);
-    setDecrement(decrement + 1);
-  };
-
+function Counter({ value, myState, step, onIncrement, onDecrement }) {
   return (
     <div>
-      <Buttons
-        onIncrement={onIncrement}
-        onDecrement={onDecrement}
-        incrQuant={increment}
-        decrQuant={decrement}
-      />
       <Value value={value} />
+      <Buttons
+        step={step}
+        onIncrement={() => onIncrement(step)}
+        onDecrement={() => onDecrement(step)}
+      />
+      <p>{myState}</p>
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    value: state.counter.value,
+    step: state.counter.step,
+    myState: state.test.my,
+  };
+};
+const mapDispatchToProps = (dispatch) => ({
+  onIncrement: (value) => dispatch(increment(value)),
+  onDecrement: (value) => dispatch(decrement(value)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

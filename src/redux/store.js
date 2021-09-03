@@ -10,7 +10,7 @@ const initialState = {
     my: "states",
   },
 };
-console.log(initialState);
+
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "counter/increment":

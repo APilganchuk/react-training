@@ -1,7 +1,9 @@
+import "../../App.css";
 import { NavLink } from "react-router-dom";
 import { Route } from "react-router";
 import { useLocation } from "react-router";
 import GoBack from "../training/GoBack";
+import logo from "../../img/circle.png";
 
 export default function HomeView() {
   const location = useLocation();
@@ -36,6 +38,7 @@ export default function HomeView() {
       <Route path="/repeta">
         <GoBack title="two" />
       </Route>
+      <img className="logo" src={logo} alt="logo" />
     </div>
   );
 }

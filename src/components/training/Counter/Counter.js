@@ -3,10 +3,9 @@ import React from "react";
 import Buttons from "./Buttons";
 import Value from "./Value";
 import { connect } from "react-redux";
-import { decrement } from "../../../redux/action";
-import { increment } from "../../../redux/action";
+import * as action from "../../../redux/counter/counter-actions";
 
-function Counter({ value, myState, step, onIncrement, onDecrement }) {
+function Counter({ value, text, myState, step, onIncrement, onDecrement }) {
   return (
     <div>
       <Value value={value} />
@@ -16,18 +15,19 @@ function Counter({ value, myState, step, onIncrement, onDecrement }) {
         onDecrement={() => onDecrement(step)}
       />
       <p>{myState}</p>
+      <b>{text}</b>
     </div>
   );
 }
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     value: state.counter.value,
     step: state.counter.step,
-    myState: state.test.my,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  onIncrement: (value) => dispatch(increment(value)),
-  onDecrement: (value) => dispatch(decrement(value)),
+  onIncrement: (value) => dispatch(action.increment(value)),
+  onDecrement: (value) => dispatch(action.decrement(value)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

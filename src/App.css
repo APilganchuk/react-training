@@ -11,3 +11,23 @@ a {
 .wrapper .active {
   color: #2196f3;
 }
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.logo {
+  display: block;
+  width: 200px;
+
+  margin: 0;
+
+  animation-name: spinner;
+  animation-duration: 7000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}

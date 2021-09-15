@@ -20,7 +20,6 @@ function Counter({ value, text, myState, step, onIncrement, onDecrement }) {
   );
 }
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     value: state.counter.value,
     step: state.counter.step,

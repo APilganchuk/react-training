@@ -13,11 +13,11 @@ a {
 }
 @keyframes spinner {
   0% {
-    transform: rotate(0);
+    transform: perspective(300px) rotateY(0);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: perspective(300px) rotateY(360deg);
   }
 }
 .logo {
